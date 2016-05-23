@@ -1,4 +1,4 @@
-s = STDIN.gets.chomp.split("")
+s = STDIN.gets
 t = STDIN.gets.to_i
  
 raise 'error' unless s.length >= 1 || s.length <= 1_000_000
@@ -15,17 +15,15 @@ class B
     if t == 1
       ans = ans + z
     else
-      if ans == z
-        ans = 0
-      elsif ans > z
+      if ans >= z
         ans = ans - z
       else
         z = ans - z
         z % 2 == 0 ? ans = 0 : ans = 1
       end
     end
-    p ans.abs
+    return ans
   end
 end
  
-B.result(s, t)
+puts B.result(s, t)
