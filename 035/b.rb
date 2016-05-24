@@ -1,9 +1,3 @@
-s = STDIN.gets
-t = STDIN.gets.to_i
- 
-raise 'error' unless s.length >= 1 || s.length <= 1_000_000
-raise 'error' unless t == 1 || t == 2
- 
 class B
   attr_reader :s, :t
   def self.result(s, t)
@@ -25,5 +19,12 @@ class B
     return ans
   end
 end
- 
-puts B.result(s, t)
+
+if __FILE__ == $0
+  s = STDIN.gets
+  t = STDIN.gets.to_i
+  raise 'error' unless s.length >= 1 || s.length <= 1_000_000
+  raise 'error' unless t == 1 || t == 2
+
+  puts B.result(s, t)
+end
