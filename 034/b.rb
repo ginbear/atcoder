@@ -5,11 +5,7 @@ class Pair
   end
 
   def result
-    if @num.even?
-      @num - 1
-    else
-      @num + 1
-    end
+    @num.even? ? @num - 1 : @num + 1
   end
 end
 
